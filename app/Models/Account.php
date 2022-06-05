@@ -11,6 +11,12 @@ class Account extends Model
 {
     use HasFactory;
     //relation one to many with user
+    protected $fillable = [
+        'account_number',
+        'currency_id',
+        'user_id',
+        'balance'
+    ];
     public function user()
     {
         return $this->belongsTo(User::class);

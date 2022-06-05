@@ -10,5 +10,9 @@ use Laravel\Sanctum\HasApiTokens;
 class Currency extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'rate'
+    ];
 
 }
