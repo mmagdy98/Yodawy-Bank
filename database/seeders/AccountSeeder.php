@@ -1,14 +1,15 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\User;
+use Database\Factories;
 use App\Models\Account;
+use App\Models\User;
+use app\Models\Currency;
+use App\Models\Transaction;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
-class UserSeeder extends Seeder
+class AccountSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,8 +18,8 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()
-            ->count(20)
-            ->create();
+        Account::factory()
+        ->count(20)
+        ->create();
     }
 }

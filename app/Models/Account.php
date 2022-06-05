@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,11 +13,18 @@ class Account extends Model
     //relation one to many with user
     public function user()
     {
-        return $this->belongsto(User::class);
+        return $this->belongsTo(User::class);
     }
-
-    public function cuurency()
+    public function Currency()
     {
-        return $this->belongsto(Curency::class);
+        return $this->belongsTo(Currency::class);
+    } 
+    public function SendAccountRelations()
+    {
+        return $this->hasMany(Transaction::class, 'send_account_id', 'id');
     }
+    public function ReceiveAccountRelations()
+    {
+        return $this->hasMany(Transaction::class, 'receive_account_id', 'id');
+    } 
 }
